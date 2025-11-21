@@ -8,7 +8,7 @@ public class Pet {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Enumerated(EnumType.STRING)
     private PetType type;
@@ -38,5 +38,6 @@ public class Pet {
 
     public String getNotes() { return notes; }
     public void setNotes(String notes) { this.notes = notes; }
+
 
 }
