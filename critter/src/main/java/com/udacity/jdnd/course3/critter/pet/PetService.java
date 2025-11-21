@@ -67,6 +67,7 @@ public class PetService {
 
     @Autowired private CustomerRepository customerRepository;
 
+    @Transactional
     public Pet savePet(Pet pet) {
         Pet savedPet = petRepository.save(pet);
         Customer owner = savedPet.getOwner();
@@ -97,3 +98,4 @@ public class PetService {
 
 
 }
+
