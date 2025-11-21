@@ -20,6 +20,7 @@ public class ScheduleService {
     @Autowired
     private PetService petService;
 
+    @Transactional
     public Schedule saveSchedule(Schedule schedule) {
         return scheduleRepository.save(schedule);
     }
@@ -42,3 +43,4 @@ public class ScheduleService {
     }
 
 }
+
