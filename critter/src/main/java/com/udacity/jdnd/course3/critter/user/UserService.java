@@ -25,6 +25,7 @@ public class UserService {
         this.customerRepository = customerRepository;
     }
 
+    @Transactional
     public Customer saveCustomer(Customer customer) {
         return customerRepository.save(customer);
     }
@@ -38,6 +39,7 @@ public class UserService {
                 .orElseThrow(() -> new RuntimeException("Customer not found with id " + id));
     }
 
+    @Transactional
     public Employee saveEmployee(Employee employee) {
         return employeeRepository.save(employee);
     }
@@ -46,6 +48,7 @@ public class UserService {
         return employeeRepository.findById(id).orElse(null);
     }
 
+    @Transactional
     public void setAvailability(Long employeeId, Set<DayOfWeek> daysAvailable) {
         Employee emp = getEmployeeById(employeeId);
         if (emp == null) {
@@ -73,3 +76,4 @@ public class UserService {
         return p==null?null:p.getOwner();
     }
 }
+
